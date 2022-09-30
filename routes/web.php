@@ -13,22 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('/home', function () {
+    return view('home');
 })->name('home');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
-
-Route::get('/product', function () {
-    return view('product');
-})->name('product');
-
-Route::get('/blog-single', function () {
-    return view('blog-single');
-})->name('blog-single');
-
-Route::get('/single-product', function () {
-    return view('single-product');
-})->name('single-product');
