@@ -5,17 +5,17 @@ use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Client;
-use App\Models\Contact;
-use App\Cart;
-use Session;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
-use Stripe\Charge;
-use Stripe\Stripe;
-use App\Models\Order;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
-use App\Mail\SendMail;
+// use App\Models\Contact;
+// use App\Cart;
+// use Session;
+// use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Redirect;
+// use Stripe\Charge;
+// use Stripe\Stripe;
+// use App\Models\Order;
+// use Illuminate\Support\Facades\Mail;
+// use App\Mail\ContactMail;
+// use App\Mail\SendMail;
 
 
 

@@ -60,7 +60,9 @@ Route::get('/activer_produit/{id}','App\Http\Controllers\PoductController@active
 
 Route::get('/ajouterslider','App\Http\Controllers\SliderController@ajouterslider');
 Route::post('/sauverslider','App\Http\Controllers\SliderController@sauverslider');
-Route::get('/slider','App\Http\Controllers\SliderController@slider');
+Route::get('/sliders','App\Http\Controllers\SliderController@slider');
+Route::get('/editslider/{id}','App\Http\Controllers\SliderController@editslider');
+Route::post('/modifierslider','App\Http\Controllers\SliderController@modifierslider');
 Route::get('/activer_slider/{id}','App\Http\Controllers\SliderController@activer_slider');
 Route::get('/desactiver_slider/{id}','App\Http\Controllers\SliderController@desactiver_slider');
 Route::get('/deleteslider/{id}','App\Http\Controllers\SliderController@deleteslider');

@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{URL::to('/')}}">
           <i class="ti-home menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -31,7 +31,7 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/categories')}}">categorie</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/products')}}"> produit</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/slider')}}"> slider</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/sliders')}}"> slider</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/commandes')}}"> commandes</a></li>
             
           </ul>

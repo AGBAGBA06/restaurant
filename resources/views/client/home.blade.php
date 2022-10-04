@@ -27,12 +27,6 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: Delicious - v4.8.0
-  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -50,10 +44,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <div class="logo me-auto">
-                <h1><a href="index.html">Delicious</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div>
+                <h1><a href="index.html">Delicious</a></h1></div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
@@ -117,35 +108,22 @@
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
-                    <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
-                        <div class="carousel-container">
-                            <div class="carousel-content">
-                                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus
-                                    et tempore modi architecto.</p>
-                                <div>
-                                    <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                                    <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Slide 3 -->
-                    <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
-                        <div class="carousel-container">
-                            <div class="carousel-content">
-                                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus
-                                    et tempore modi architecto.</p>
-                                <div>
-                                    <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                                    <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    @foreach ($slider as $sliders)
+                    <div class="carousel-item" style="background-image: url(/storage/slider_images/{{$sliders->slider_image }});">
+                     <div class="carousel-container">
+                         <div class="carousel-content">
+                             <h2 class="animate__animated animate__fadeInDown">{{$sliders->description_one}}</h2>
+                     <p class="animate__animated animate__fadeInUp">{{$sliders->description_two}}</p>
+                             <div>
+                                 <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                                 <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                             </div>
+                         </div>
+                     </div>
+                    </div> 
+                    @endforeach
 
                 </div>
 

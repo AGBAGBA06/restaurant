@@ -46,7 +46,7 @@ class CategoryController extends Controller
     public function modifiercategorie(Request $request)
     {
         $this->validate($request, ['category_name' => 'required']);
-        $categorie->category::find($request->input('id'));
+        $categorie=Category::find($request->input('id'));
         $categorie->category_name = $request->input('category_name');
         $categorie->update();
         return redirect('/categories')->with(

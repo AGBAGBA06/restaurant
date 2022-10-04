@@ -37,7 +37,7 @@
                       @foreach ($sliders as $slider)
                       <tr>
                         <td>{{$increment}}</td>
-                        <td><img src="/storage/product_images/{{$slider->slider_image}}" alt=""></td>
+                        <td><img src="/storage/slider_images/{{$slider->slider_image}}" alt=""></td>
                         <td>{{$slider->description_one}}</td>
                         <td>{{$slider->description_two}}</td>
                         {{-- <td>{{$slider->product_category}}</td> --}}
@@ -49,11 +49,9 @@
                           <label class="badge badge-danger">desactive</label>
                             
                           @endif</td>
-                        
-                          
                           <td>
                             <button class="btn btn-outline-primary" >                         
-                              <a href="{{url('/edit_slider/'.$slider->id)}}" id="edit">edit</a></button>
+                              <a href="{{url('/editslider/'.$slider->id)}}" id="edit">edit</a></button>
   
                             <a href="{{url('/deleteslider/'.$slider->id)}}" id="delete" class="btn btn-outline-danger">Delete</a>
                             @if ($slider->status==1)

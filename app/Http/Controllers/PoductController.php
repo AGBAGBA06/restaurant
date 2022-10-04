@@ -107,8 +107,8 @@ class PoductController extends Controller
                 $path=$request->file('product_image')->storeAs('public/product_images',
                            $fileNametostore);
 
-                           if ($product->produit_image!='noimage.jpg') {
-                            Storage::delete('public/product_images/'.$produit->image);
+                           if ($produit->produit_image!='noimage.jpg') {
+                            //Storage::delete('public/product_images/'.$produit->image);
                            
                            }
                            $produit->product_image=$fileNametostore;
