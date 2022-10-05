@@ -17,6 +17,8 @@
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/ajoutercategorie')}}">ajouter categorie</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/ajouterproduit')}}">ajouter produit</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterslider')}}">ajouter slider</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterabout')}}">ajouter about</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url::to('/ajoutergallerie')}}">ajouter gallerie</a></li>
             
           </ul>
         </div>
@@ -32,7 +34,8 @@
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/categories')}}">categorie</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/products')}}"> produit</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/sliders')}}"> slider</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/commandes')}}"> commandes</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/abouts')}}"> abouts</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/galleries')}}"> galleries</a></li>
             
           </ul>
         </div>

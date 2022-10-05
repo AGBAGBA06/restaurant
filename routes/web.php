@@ -32,23 +32,24 @@ Route::get('/ajouter_au_panier/{id}','App\Http\Controllers\ClientController@ajou
 Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
 Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
 Route::post('/payer','App\Http\Controllers\ClientController@payer');
-
-
 Route::get('/logout','App\Http\Controllers\ClientController@logout');
+
 Route::get('/voir_pdf/{id}','App\Http\Controllers\PdfController@voir_pdf');
 
-
+//admin controller
 Route::get('/admin','App\Http\Controllers\AdminController@dashboard');
 Route::get('/commandes','App\Http\Controllers\AdminController@commandes');
 
+//categorie de prroduits
 Route::get('/ajoutercategorie','App\Http\Controllers\CategoryController@ajoutercategorie');
 Route::post('/sauvercategorie','App\Http\Controllers\CategoryController@sauvercategorie');
 Route::get('/categories','App\Http\Controllers\CategoryController@categories');
+
 //une route dynamique//
 Route::get('/edit_categorie/{id}','App\Http\Controllers\CategoryController@edit_categorie');
 Route::post('/modifiercategorie','App\Http\Controllers\CategoryController@modifiercategorie');
 Route::get('/deletecategorie/{id}','App\Http\Controllers\CategoryController@deletecategorie');
-
+//products
 Route::get('/products','App\Http\Controllers\PoductController@products');
 Route::get('/ajouterproduit','App\Http\Controllers\PoductController@ajouterproduit');
 Route::post('/sauverproduit','App\Http\Controllers\PoductController@sauverproduit');
@@ -57,7 +58,7 @@ Route::post('/modifierproduit','App\Http\Controllers\PoductController@modifierpr
 Route::get('/deleteproduit/{id}','App\Http\Controllers\PoductController@deleteproduit');
 Route::get('/desactiver_produit/{id}','App\Http\Controllers\PoductController@desactiver_produit');
 Route::get('/activer_produit/{id}','App\Http\Controllers\PoductController@activer_produit');
-
+//slider
 Route::get('/ajouterslider','App\Http\Controllers\SliderController@ajouterslider');
 Route::post('/sauverslider','App\Http\Controllers\SliderController@sauverslider');
 Route::get('/sliders','App\Http\Controllers\SliderController@slider');
@@ -67,6 +68,12 @@ Route::get('/activer_slider/{id}','App\Http\Controllers\SliderController@activer
 Route::get('/desactiver_slider/{id}','App\Http\Controllers\SliderController@desactiver_slider');
 Route::get('/deleteslider/{id}','App\Http\Controllers\SliderController@deleteslider');
 
+//home controllers
+Route::get('/ajouterabout','App\Http\Controllers\HomeController@ajouterabout');
+Route::post('/sauverabout','App\Http\Controllers\HomeController@sauverabout');
+Route::get('/abouts','App\Http\Controllers\HomeController@abouts');
 
-
+Route::get('/ajoutergallerie','App\Http\Controllers\HomeController@ajoutergallerie');
+Route::post('/sauvergallerie','App\Http\Controllers\HomeController@sauvergallerie');
+Route::get('/galleries','App\Http\Controllers\HomeController@galleries');
 //Route::get('/admin', 'App\Http\Controllers\HomeController@index');

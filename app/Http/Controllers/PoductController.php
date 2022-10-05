@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Support\Facades\Storage;
 use App\Models;
 use App\Models\Category;
+use App\Models\About;
 use App\Models\Product;
 
 
