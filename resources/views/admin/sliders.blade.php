@@ -40,7 +40,6 @@
                         <td><img src="/storage/slider_images/{{$slider->slider_image}}" alt=""></td>
                         <td>{{$slider->description_one}}</td>
                         <td>{{$slider->description_two}}</td>
-                        {{-- <td>{{$slider->product_category}}</td> --}}
                         <td>
                           @if ($slider->status==1)
                           <label class="badge badge-success">Activé</label>

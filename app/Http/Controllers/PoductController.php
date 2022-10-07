@@ -35,6 +35,7 @@ class PoductController extends Controller
     public function sauverproduit(Request $request){
          $this->validate($request, ['nom'=>'required|unique:products',
                                     'prix'=>'required',
+                                    'description'=>'required',
                                     'product_category'=>'required',
                                     'status'=>'required',
                                     'product_image'=>'image|nullable|max:1999']);
@@ -59,6 +60,7 @@ class PoductController extends Controller
                                     $produit=new Product();
                                     $produit->nom=$request->input('nom');
                                     $produit->prix=$request->input('prix');
+                                    $produit->description=$request->input('description');
                                     $produit->product_category=$request->input('product_category');
                                     // $produit->mot_de_passe=$request->input('mot_de_passe');
                                     // $produit->email=$request->input('email');
@@ -87,11 +89,13 @@ class PoductController extends Controller
          public function modifierproduit(Request $request){
             $this->validate($request, ['nom'=>'required',
                                       'prix'=>'required',
+                                      'description'=>'required',
                                     'product_category'=>'required',
                                     'product_image'=>'image|nullable|max:1999']);
                                         
             $produit= Product::find($request->input('id'));
             $produit->nom=$request->input('nom');
+            $produit->description=$request->input('description');
             $produit->prix=$request->input('prix');
             $produit->product_category=$request->input('product_category');
             

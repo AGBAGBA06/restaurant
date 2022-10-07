@@ -24,7 +24,7 @@ Ajouter about
                   </div>
                @endif
                 {!!Form::open(['action'=>'App\Http\Controllers\HomeController@sauverabout',
-                  'method'=>'POST','class'=>'cmxform','id'=>'commentForm'])!!}
+                  'method'=>'POST','class'=>'cmxform','id'=>'commentForm','enctype'=>'multipart/form-data'])!!}
                  {{ csrf_field() }}
                   <div class="form-group">
                    {{Form::label('','',['for'=>'cname'])}}
@@ -32,20 +32,8 @@ Ajouter about
                   </div>
                   <div class="form-group">
                     {{Form::label('','image',['for'=>'cname'])}}
-                    {{Form::file('about_image',['class'=>'form-control','name'=>'image','id'=>'image'])}}
+                    {{Form::file('about_image',['class'=>'form-control','id'=>'image'])}}
                    </div>          
-                  {{--<div class="form-group">
-                    <label for="cemail">E-Mail (required)</label>
-                    <input id="cemail" class="form-control" type="email" name="email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="curl">URL (optional)</label>
-                    <input id="curl" class="form-control" type="url" name="url">
-                  </div>
-                  <div class="form-group">
-                    <label for="ccomment">Your comment (required)</label>
-                    <textarea id="ccomment" class="form-control" name="comment" required></textarea>
-                  </div>--}}
                   
                   {{Form::submit('ajouter',['class'=>'btn btn-primary'])}}
                   {!!Form::close()!!}

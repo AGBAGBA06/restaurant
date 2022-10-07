@@ -19,6 +19,9 @@
             <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterslider')}}">ajouter slider</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterabout')}}">ajouter about</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url::to('/ajoutergallerie')}}">ajouter gallerie</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterevent')}}">ajouter event</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterchef')}}">ajouter chef</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url::to('/ajouterspecial')}}">ajouter special</a></li>
             
           </ul>
         </div>
@@ -36,6 +39,9 @@
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/sliders')}}"> slider</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/abouts')}}"> abouts</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{URL::to('/galleries')}}"> galleries</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/events')}}"> events</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/chefs')}}"> chefs</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{URL::to('/specials')}}"> specials</a></li>
             
           </ul>
         </div>

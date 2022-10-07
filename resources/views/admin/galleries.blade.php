@@ -26,8 +26,6 @@
                     <tr>
                         <th>Order #</th>
                         <th>images</th>
-                       <th>description one</th>
-                       <th>description two</th>
                       <th>status</th>
                         <th>Actions</th>
                     </tr>
@@ -37,9 +35,7 @@
                       @foreach ($galleries as $gallerie)
                       <tr>
                         <td>{{$increment}}</td>
-                        <td><img src="/storage/gallerie_images/{{$gallerie->gallerie_image}}" alt=""></td>
-                        <td>{{$gallerie->description_one}}</td>
-                        <td>{{$gallerie->description_two}}</td>
+                        <td><img src="/storage/gallerie_images/{{$gallerie->gallerie_image }}" alt=""></td>
                         {{-- <td>{{$gallerie->product_category}}</td> --}}
                         <td>
                           @if ($gallerie->status==1)

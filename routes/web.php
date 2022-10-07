@@ -17,22 +17,24 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::get('/','App\Http\Controllers\ClientController@home');
-Route::get('/cart','App\Http\Controllers\ClientController@cart');
-Route::get('/contact','App\Http\Controllers\ClientController@contact');
-//Route::post('/sendEmail','App\Http\Controllers\ClientController@sendEmail');
-Route::get('/shop','App\Http\Controllers\ClientController@shop');
-Route::get('/checkout','App\Http\Controllers\ClientController@checkout');
-Route::get('/loogin','App\Http\Controllers\ClientController@loogin');
-Route::get('/signup','App\Http\Controllers\ClientController@signup');
-Route::post('/creer_compte','App\Http\Controllers\ClientController@creer_compte');
-Route::post('/acceder_compte','App\Http\Controllers\ClientController@acceder_compte');
 Route::get('/select_by_cat/{name}','App\Http\Controllers\ClientController@select_by_cat');
-Route::get('/retirer_du_panier/{id}','App\Http\Controllers\ClientController@retirer_produit');
-Route::get('/ajouter_au_panier/{id}','App\Http\Controllers\ClientController@ajouter_au_panier');
-Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
-Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
-Route::post('/payer','App\Http\Controllers\ClientController@payer');
-Route::get('/logout','App\Http\Controllers\ClientController@logout');
+
+// Route::get('/cart','App\Http\Controllers\ClientController@cart');
+// Route::get('/contact','App\Http\Controllers\ClientController@contact');
+// //Route::post('/sendEmail','App\Http\Controllers\ClientController@sendEmail');
+ Route::get('/menu','App\Http\Controllers\ClientController@menu');
+// Route::get('/checkout','App\Http\Controllers\ClientController@checkout');
+// Route::get('/loogin','App\Http\Controllers\ClientController@loogin');
+// Route::get('/signup','App\Http\Controllers\ClientController@signup');
+// Route::post('/creer_compte','App\Http\Controllers\ClientController@creer_compte');
+// Route::post('/acceder_compte','App\Http\Controllers\ClientController@acceder_compte');
+// Route::get('/select_by_cat/{name}','App\Http\Controllers\ClientController@select_by_cat');
+// Route::get('/retirer_du_panier/{id}','App\Http\Controllers\ClientController@retirer_produit');
+// Route::get('/ajouter_au_panier/{id}','App\Http\Controllers\ClientController@ajouter_au_panier');
+// Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
+// Route::post('/modifier_qty/{id}','App\Http\Controllers\ClientController@modifier_panier');
+// Route::post('/payer','App\Http\Controllers\ClientController@payer');
+// Route::get('/logout','App\Http\Controllers\ClientController@logout');
 
 Route::get('/voir_pdf/{id}','App\Http\Controllers\PdfController@voir_pdf');
 
@@ -71,9 +73,21 @@ Route::get('/deleteslider/{id}','App\Http\Controllers\SliderController@deletesli
 //home controllers
 Route::get('/ajouterabout','App\Http\Controllers\HomeController@ajouterabout');
 Route::post('/sauverabout','App\Http\Controllers\HomeController@sauverabout');
+Route::get('/ajouterevent','App\Http\Controllers\HomeController@ajouterevent');
+Route::post('/sauverevent','App\Http\Controllers\HomeController@sauverevent');
+Route::get('/ajouterspecial','App\Http\Controllers\HomeController@ajouterspecial');
+Route::post('/sauverspecial','App\Http\Controllers\HomeController@sauverspecial');
+Route::get('/ajouterchef','App\Http\Controllers\HomeController@ajouterchef');
+Route::post('/sauverchef','App\Http\Controllers\HomeController@sauverchef');
 Route::get('/abouts','App\Http\Controllers\HomeController@abouts');
+Route::get('/specials','App\Http\Controllers\HomeController@specials');
+Route::get('/events','App\Http\Controllers\HomeController@events');
+Route::get('/chefs','App\Http\Controllers\HomeController@chefs');
 
 Route::get('/ajoutergallerie','App\Http\Controllers\HomeController@ajoutergallerie');
 Route::post('/sauvergallerie','App\Http\Controllers\HomeController@sauvergallerie');
 Route::get('/galleries','App\Http\Controllers\HomeController@galleries');
+Route::get('/deletegallerie/{id}','App\Http\Controllers\HomeController@deletegallerie');
+Route::get('/desactiver_gallerie/{id}','App\Http\Controllers\HomeController@desactiver_gallerie');
+Route::get('/activer_gallerie/{id}','App\Http\Controllers\HomeController@activer_gallerie');
 //Route::get('/admin', 'App\Http\Controllers\HomeController@index');

@@ -1,13 +1,13 @@
 @extends('layout.appad')
 @section('title')
-Ajouter Categorie 
+Ajouter event 
 @endsection
 @section('content')
       <div class="row grid-margin">
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">ajouter image au gallerie</h4>
+              <h4 class="card-title">ajouter event</h4>
               
               @if (Session::has('status'))
                   <div class="alert alert-success">
@@ -23,19 +23,29 @@ Ajouter Categorie
                     </ul>
                   </div>
                @endif
-                {!!Form::open(['action'=>'App\Http\Controllers\HomeController@sauvergallerie',
+                {!!Form::open(['action'=>'App\Http\Controllers\HomeController@sauverevent',
                   'method'=>'POST','class'=>'cmxform','id'=>'commentForm','enctype'=>'multipart/form-data'])!!}
                  {{ csrf_field() }}
-
-                 <div class="form-group">
-                    {{Form::label('','gallerie du produit',['for'=>'cname'])}}
-                    {{Form::file('gallerie_image',['class'=>'form-control','id'=>'cname'])}}
+                  <div class="form-group">
+                   {{Form::label('','titre',['for'=>'cname'])}}
+                   {{Form::text('titre','',['class'=>'form-control','id'=>'cname'])}}
+                  </div>
+                  <div class="form-group">
+                    {{Form::label('','texte',['for'=>'cname'])}}
+                    {{Form::text('texte','',['class'=>'form-control','id'=>'cname'])}}
                    </div>
-
+                   <div class="form-group">
+                    {{Form::label('','prix',['for'=>'cname'])}}
+                    {{Form::number('prix','',['class'=>'form-control','id'=>'cname'])}}
+                   </div>
+                  <div class="form-group">
+                    {{Form::label('','event_image',['for'=>'cname'])}}
+                    {{Form::file('event_image',['class'=>'form-control','id'=>'image'])}}
+                   </div> 
                    <div class="form-group">
                     {{Form::label('','status',['for'=>'cname'])}}
                     {{Form::number('status','',['class'=>'form-control','id'=>'cname'])}}
-                   </div>
+                   </div>         
                   
                   {{Form::submit('ajouter',['class'=>'btn btn-primary'])}}
                   {!!Form::close()!!}
@@ -49,6 +59,4 @@ Ajouter Categorie
 @endsection
 
 @section('script')
-{{-- <script src="backend/js/form-validation.js"></script>
-<script src="backend/js/bt-maxLength.js"></script> --}}
 @endsection

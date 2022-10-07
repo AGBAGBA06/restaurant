@@ -1,10 +1,16 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Http\Support\Facades\Storage;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\Gallerie;
+use App\Models\Event;
+use App\Models\Chef;
+use App\Models\Aboutt;
+use App\Models\Specials;
 // use App\Models\Contact;
 // use App\Cart;
 // use Session;
@@ -23,15 +29,24 @@ class ClientController extends Controller
 {
     //
     function home(){
+     $categories=category::get();
+     $events=event::get();
+     $abouts=aboutt::get();
+     $specials=specials::get();
+     $chefs=chef::get();
+     $galleries=gallerie::get();
      $slider=Slider::where('status',1)->get();
      $product=Product::where('status',1)->get();
 
-        return view ('client.home')->with('slider',$slider)->with('product',$product);
+        return view ('client.home')->with('slider',$slider)->
+        with('product',$product)->with('categories',$categories)->
+        with('galleries',$galleries)->with('events',$events)
+        ->with('chefs',$chefs) ->with('abouts',$abouts)->with('specials',$specials);
     }
 
 
-    function contact(){
-           return view ('client.contact');
+    function menu(){
+           return view ('client.menu');
        }
 
             //  function sendEmail(Request $request){
@@ -93,9 +108,11 @@ class ClientController extends Controller
     function select_by_cat($name){
         $categories=Category::get();
         $product=Product::where('product_category',$name)->where('status',1)->get();
-        return view  ('client.shop')->with('product',$product)->with('categories',$categories);
+        return view  ('client.home')->with('product',$product)->with('categories',$categories);
     }
 
+
+    
    //*****pour ajouter des produits au panier****** */
     function ajouter_au_panier($id){
         $products=Product::find($id);

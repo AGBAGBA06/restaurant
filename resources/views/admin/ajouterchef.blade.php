@@ -1,13 +1,13 @@
 @extends('layout.appad')
 @section('title')
-Ajouter Categorie 
+Ajouter chef 
 @endsection
 @section('content')
       <div class="row grid-margin">
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">ajouter image au gallerie</h4>
+              <h4 class="card-title">ajouter chef</h4>
               
               @if (Session::has('status'))
                   <div class="alert alert-success">
@@ -23,19 +23,26 @@ Ajouter Categorie
                     </ul>
                   </div>
                @endif
-                {!!Form::open(['action'=>'App\Http\Controllers\HomeController@sauvergallerie',
+                {!!Form::open(['action'=>'App\Http\Controllers\HomeController@sauverchef',
                   'method'=>'POST','class'=>'cmxform','id'=>'commentForm','enctype'=>'multipart/form-data'])!!}
                  {{ csrf_field() }}
-
-                 <div class="form-group">
-                    {{Form::label('','gallerie du produit',['for'=>'cname'])}}
-                    {{Form::file('gallerie_image',['class'=>'form-control','id'=>'cname'])}}
+                  <div class="form-group">
+                   {{Form::label('','nom du chef',['for'=>'cname'])}}
+                   {{Form::text('nom_chef','',['class'=>'form-control','id'=>'cname'])}}
+                  </div>
+                  <div class="form-group">
+                    {{Form::label('','fonction',['for'=>'cname'])}}
+                    {{Form::text('fonction','',['class'=>'form-control','id'=>'cname'])}}
                    </div>
-
+                   
+                  <div class="form-group">
+                    {{Form::label('','chef_image',['for'=>'cname'])}}
+                    {{Form::file('chef_image',['class'=>'form-control','id'=>'image'])}}
+                   </div>  
                    <div class="form-group">
                     {{Form::label('','status',['for'=>'cname'])}}
                     {{Form::number('status','',['class'=>'form-control','id'=>'cname'])}}
-                   </div>
+                   </div>        
                   
                   {{Form::submit('ajouter',['class'=>'btn btn-primary'])}}
                   {!!Form::close()!!}
@@ -49,6 +56,4 @@ Ajouter Categorie
 @endsection
 
 @section('script')
-{{-- <script src="backend/js/form-validation.js"></script>
-<script src="backend/js/bt-maxLength.js"></script> --}}
 @endsection

@@ -32,6 +32,10 @@ Edit produit
                    {{Form::label('','nom du produit',['for'=>'cname'])}}
                    {{Form::text('nom',$product->nom,['class'=>'form-control','id'=>'cname'])}}
                   </div>
+                  <div class="form-group">
+                    {{Form::label('','description du menu',['for'=>'cname'])}}
+                    {{Form::text('description',$product->description,['class'=>'form-control','id'=>'cname'])}}
+                   </div>
                   
                   <div class="form-group">
                     {{Form::label('','prix du produit',['for'=>'cprenom'])}}

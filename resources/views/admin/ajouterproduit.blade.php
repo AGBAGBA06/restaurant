@@ -37,8 +37,13 @@ Ajouter utilisateur
                     {{Form::number('prix','',['class'=>'form-control','id'=>'cprenom'])}}
                    </div>
 
+                   <div class="form-group">
+                    {{Form::label('','description de menu',['for'=>'cprenom'])}}
+                    {{Form::text('description','',['class'=>'form-control','id'=>'cprenom'])}}
+                   </div>
+
                      <div class="form-group">
-                    {{Form::label('','categorie du produit') }}
+                    {{Form::label('','categorie du menu') }}
                     {{Form::select('product_category',$categories,null,
                     ['placeholder'=>'select category' ,'class'=>'form-control'])}}
                    </div> 

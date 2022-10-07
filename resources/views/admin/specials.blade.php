@@ -2,13 +2,13 @@
 
 @extends('layout.appad')
 @section('title')
-Produits
+specials
 @endsection
 {{Form::hidden('',$increment=1)}}
 @section('content')
 <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Produits</h4>
+          <h4 class="card-title">specials</h4>
           
           @if (Session::has('status'))
           <div class="alert alert-success">
@@ -22,45 +22,40 @@ Produits
                   <thead>
                     <tr>
                         <th>Order #</th>
-                        <th>image <br> du produit</th>
-                        <th>nom de<br>  produit</th>
-                        <th>description de<br>  produit</th>
-                        <th>prix<br>  du produit</th>
-                        <th>categorie</th>
-                        <th>status <br> du produit</th>
+                        <th>image <br> du special</th>
+                        <th>nom de<br>  special</th>
+                        <th>titre<br>  du special</th>
+                        <th>description de<br>  special</th>
+                        <th>status <br> du special</th>
                         <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($produits as $user)
+                    @foreach ($specials as $special)
                       <tr>
                         <td>{{$increment}}</td>
-                      <td><img src="storage/product_images/{{$user->product_image}}" alt=""></td>
-                      <td>{{$user->nom}}</td>
-                      <td>{{$user->prix}}</td>
-                      <td>{{$user->description}}</td>
-                      <td>{{$user->product_category}}</td>
-                      
+                      <td><img src="storage/special_images/{{$special->special_image}}" alt=""></td>
+                      <td>{{$special->nom_special}}</td>
+                      <td>{{$special->titre}}</td>
+                      <td>{{$special->description}}</td>
                       <td>
-                        @if ($user->status==1)
+                        @if ($special->status==1)
                         <label class="badge badge-success">Activé</label>
                         @else
                         <label class="badge badge-danger">desactivé</label>
                         @endif
                       </td>
-                      {{-- <td>
-                          <label class="badge badge-info">On hold</label>
-                        </td> --}}
+                      
                         <td>
                           <button class="btn btn-outline-primary" >
-                            <a href="{{url('/editproduit/'.$user->id)}}"> edit</a></button>
-                          <a href="{{url('/deleteproduit/'.$user->id)}}" id="delete" class="btn btn-outline-danger">Delete</a>
-                        @if ($user->status==1)
+                            <a href="{{url('/editspecial/'.$special->id)}}"> edit</a></button>
+                          <a href="{{url('/deletespecial/'.$special->id)}}" id="delete" class="btn btn-outline-danger">Delete</a>
+                        @if ($special->status==1)
                        <button class="btn btn-outline-warning" >
-                            <a href="{{url('/desactiver_produit/'.$user->id)}}"> desactivé</a></button>
+                            <a href="{{url('/desactiver_special/'.$special->id)}}"> desactivé</a></button>
                          @else
                           <button class="btn btn-outline-primary" >
-                            <a href="{{url('/activer_produit/'.$user->id)}}">activé</a></button>
+                            <a href="{{url('/activer_special/'.$special->id)}}">activé</a></button>
                         @endif
                         </td>
                       </tr>
